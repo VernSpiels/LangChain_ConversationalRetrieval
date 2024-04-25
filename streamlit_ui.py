@@ -94,14 +94,12 @@ if __name__ == "__main__":
             st.session_state['source_documents'].append(
                 f'Source Text: {doc.page_content}\nDocument Name: {doc.metadata["source"]}\nPage Number: {doc.metadata["page"]}')
 
-    bot_image = Image.open("llama.jpg")
-
     # Display chat history
     if st.session_state['generated']:
         with response_container:
             for i in range(len(st.session_state['generated'])):
                 message(st.session_state["past"][i], is_user=True, key=str(i) + '_user', avatar_style="shapes")
-                if i>0 : message(st.session_state["summarazied_question"][i], key=str(i) + '_ai_1', avatar_style="🧑‍💻")
+                if i>0 : message(st.session_state["summarazied_question"][i], key=str(i) + '_ai_1', avatar_style="fun-emoji",seed=7)
                 message(st.session_state["generated"][i], key=str(i)+ '_ai', avatar_style="fun-emoji",seed=7)
                 if i>0 :
                     message(st.session_state["source_documents"][i], key=str(i) + '_ai_2', avatar_style="avataaars")
