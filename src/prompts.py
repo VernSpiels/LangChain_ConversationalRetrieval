@@ -9,19 +9,28 @@
 
 qa_template = """Use the following pieces of information to answer the user's question.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.
-You are professional expert in oil and gas industry, tell me about simple things
 
 Context: {context}
 Question: {question}
 
 Only return the helpful answer below and nothing else.
+# Style #
+The response should be clear, concise, and in the form of a straightforward decision.
+
+# Tone # 
+Professional and analytical.
+
+# Audience # 
+The audience is professional experts in oil and gas industry
+
+Your answer is very important to my career.
 Helpful answer:
 """
 
 condense_template = """
     Combine the chat history and follow up question into
     a standalone question.
-    You are professional expert in oil and gas industry, tell me about simple things
+    You are professional expert in oil and gas industry
 
     Chat History: {chat_history}
     Follow up question: {question}
